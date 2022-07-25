@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Pimage from "./utils/Portfolio_picture.jpg"
 import projects from "./utils/projects";
 import {BsFacebook,BsGithub , BsLinkedin} from 'react-icons/bs'
+import { devices } from "./utils/sizes";
 
 
 function App() {
@@ -96,7 +97,13 @@ const Container = styled.div`
   overflow:hidden;
 `
 const Title = styled.h1`
-
+  font-size:75px;
+  @media ${devices.laptop}{
+    font-size:50px; 
+  }
+  @media ${devices.mobileM}{
+    font-size:35px;
+  }
 `
 
 const Box = styled.div`
@@ -105,7 +112,18 @@ const Box = styled.div`
   display:flex;
   justify-content:start;
   align-items:center;
-  width:65%;
+  border-radius:2%;
+  width:60%;
+  font-size:25px;
+  @media ${devices.laptop}{
+    width:90%; 
+  }
+  @media ${devices.mobileM}{
+    width:100%;
+    flex-direction:column;
+
+  }
+  
 `
 
 const Image = styled.img`
@@ -113,7 +131,13 @@ const Image = styled.img`
   height:20%;
   width:20%;
   border-radius:30%;
-  
+  margin-left:15%;
+  @media ${devices.mobileM}{
+  height:30%;
+  width:45%;
+  margin:auto
+    
+  }
 `
 
 
@@ -124,6 +148,12 @@ const InfoText = styled.div`
     flex-direction:column;  
     margin-left:5rem;
     margin-right:5rem;
+    @media ${devices.mobileM}{
+    width:100%;
+    flex-direction:column;
+    font-size:25px;
+    text-align:center
+  }
 `
 
 const BoxProjects = styled.div`
@@ -140,15 +170,27 @@ const TitleProjects = styled.h2`
 
 const ProjectCards = styled.div`
     display:grid;
-    grid-template-columns:23rem 23rem 23rem;
+    grid-template-columns:repeat(3,1fr);
     margin-left:25px;
     margin-right:25px;
+    max-width:2000px;
+    @media ${devices.laptop}{
+      grid-template-columns:repeat(2,1fr);
+    }
+    @media ${devices.mobileM}{
+    grid-template-columns:repeat(1,1fr);
+  }
 `
 
 
 const ProjectCard = styled.div`
   margin-left:10px;
   margin-top:20px;
+  margin-bottom:5px;
+  @media ${devices.laptop}{
+      margin-left:40px;
+      
+    }
 `
 
 const ProjectImage = styled.img`
@@ -169,6 +211,10 @@ const SocialLinks = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
+    
+    @media ${devices.mobileM}{
+    flex-direction:column
+  }
 `
 
 const SocialItem = styled.div`
@@ -196,12 +242,18 @@ const ImageLinkedin = styled(BsLinkedin)`
 
 const ConTitle = styled.h1`
   padding:10px;
+  font-size:50px;
 `
 
 const About_Me = styled(Box)`
     flex-direction:column;
+    width:75%;
+    font-size:25px;
     p{
       margin-top:10px
+    }
+    @media ${devices.laptop}{
+      width:100%;
     }
 `
 const TitleAboutMe = styled(Title)`
