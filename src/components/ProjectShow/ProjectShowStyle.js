@@ -72,6 +72,7 @@ export const ContextBox = styled.div`
 
     }
     @media ${devices.mobileM}{
+      position:none;
       width:0;
       height:0;
       &:hover{

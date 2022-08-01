@@ -6,12 +6,13 @@ import { Box,Image,InfoText } from './FirstInfoStyle'
 
 
 
-const FirstInfo = () => {
+const FirstInfo = ({mode}) => {
+  console.log(mode)
+  console.log(typeof(mode))
   return (
     <Box>
-        
-          <Image src={Pimage}/>
-          <InfoText>
+          <Image src={Pimage} mode={mode}/>
+          <InfoText mode={mode}>
             <p>Greetings👋 </p>
             <p>I am Beres Tamas from MarosVasarhely an aspiring developer.</p>
             <p>Studying Computer Science 💻 at Sapientia University</p>

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { devices } from "../../utils/sizes";
-
+import {light} from '../../utils/modes'
+import {dark} from '../../utils/modes'
 
 export const Box = styled.div`
-  background:white;
+  background:${props => props.mode=="dark" ? "black" : "white"};
   margin-top:2.5rem;
   display:flex;
   justify-content:start;
@@ -11,6 +12,8 @@ export const Box = styled.div`
   border-radius:2%;
   width:60%;
   font-size:25px;
+  text-align:center;
+
   @media ${devices.laptop}{
     width:90%; 
   }
