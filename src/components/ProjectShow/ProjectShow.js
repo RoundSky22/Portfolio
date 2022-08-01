@@ -5,8 +5,20 @@ import { BoxProjects,
     ProjectCards,
     ProjectCard,
     ProjectImage,
-    ProjectTitle
+    ProjectTitle,
+    ContextBox,
+    TechImage,
+    ReactIcon,
+    ContentText,
+    NodeIcon,
+    StyleC
  } from './ProjectShowStyle'
+
+
+const Checker = (word) =>{
+    
+}
+
 
 const ProjectShow = () => {
   return (
@@ -17,12 +29,40 @@ const ProjectShow = () => {
       {projects.map((index)=>{
         return(
           <ProjectCard key={index.id}>
-            <ProjectImage src = {index.img}></ProjectImage>
+
+              <a href={index.link}>
+              <ContextBox>
+              <ContentText>Used Technologies:</ContentText>  
+                <TechImage>
+                  {index.createdWith.includes("REACT") ? 
+                  <ReactIcon size={62}/>
+                  :
+                  console.log()
+                }
+
+                {index.createdWith.includes("NODE") ? 
+                  <NodeIcon size={62}/>
+                  :
+                  console.log()
+                }
+
+                {index.createdWith.includes("STYLEC") ? 
+                      <StyleC size={62 }></StyleC>
+                    
+                  :
+                  console.log()
+                }
+                </TechImage>
+              </ContextBox>
+
+              
+              <ProjectImage src = {index.img}></ProjectImage>
+              </a>
+            
             <ProjectTitle>{index.title}</ProjectTitle>
+           
           </ProjectCard>
         )
-
-      
       })}
     </ProjectCards>
     
