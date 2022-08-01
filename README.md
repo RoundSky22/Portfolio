@@ -10,7 +10,7 @@ Technologies that were used to create this website:**REACT**
 
 **PROJECT STATUS**
 
-*Unfinished*
+*Unfinished*❌
 
 
 
